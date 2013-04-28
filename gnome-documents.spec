@@ -1,11 +1,10 @@
-%define		api		1.0
-%define		gi_libname	%mklibname gdprivate-gir %{api}
-
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
+
+%define	api	1.0
 
 Name:		gnome-documents
 Version:	3.6.0
-Release:	1
+Release:	2
 License:	GPLv2+
 Summary:	Document manager application for GNOME
 Url:		http://www.gnome.org/
@@ -31,16 +30,10 @@ Requires:	tracker
 
 Obsoletes:	%{_lib}gdprivate1.0_0 < 0.3.3
 Obsoletes:	%{_lib}gdprivate1.0-devel < 0.3.3
+Obsoletes:	%{_lib}gdprivate-gir1.0 < 3.6.0-2
 
 %description
 Documents is a document manager application for GNOME.
-
-%package -n %{gi_libname}
-Summary:	GObject introspection interface for %{name}
-Group:		System/Libraries
-
-%description -n %{gi_libname}
-GObject introspection interface for %{name}.
 
 %prep
 %setup -q
@@ -51,49 +44,27 @@ GObject introspection interface for %{name}.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
-
 %find_lang %{name}
-
-#we don't want these
-find %{buildroot} -name "*.la" -delete
 
 %files -f %{name}.lang
 %doc AUTHORS NEWS README
 %{_bindir}/%{name}
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/%{name}
-%{_datadir}/icons/hicolor/*/apps/%{name}.png
-%{_libdir}/%{name}/libgdprivate-%{api}.so
 %{_libexecdir}/gd-tracker-gdata-miner
 %{_libexecdir}/gnome-documents-search-provider
 %{_libexecdir}/gd-tracker-zpj-miner
-%{_libdir}/%{name}/girepository-1.0/GdPrivate-1.0.typelib
+%{_libdir}/%{name}/girepository-1.0/Gd-%{api}.typelib
+%{_libdir}/%{name}/girepository-1.0/GdPrivate-%{api}.typelib
 %{_libdir}/%{name}/libgd.so
-%{_libdir}/%{name}/libgdminer-1.0.so
+%{_libdir}/%{name}/libgdprivate-%{api}.so
+%{_libdir}/%{name}/libgdminer-%{api}.so
+%{_datadir}/applications/%{name}.desktop
 %{_datadir}/glib-2.0/schemas/org.gnome.documents.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.Documents.enums.xml
 %{_datadir}/dbus-1/services/org.gnome.Documents.ZpjMiner.service
 %{_datadir}/dbus-1/services/org.gnome.Documents.GDataMiner.service
 %{_datadir}/dbus-1/services/org.gnome.Documents.SearchProvider.service
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
-
-%files -n %{gi_libname}
-%{_libdir}/%{name}/girepository-1.0/Gd-%{api}.typelib
-
-
-
-%changelog
-* Mon Oct 15 2012 Arkady L. Shane <ashejn@rosalab.ru> 3.6.0-1
-- update to 3.6.0
-
-* Sat May 05 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.5.1-1
-+ Revision: 796441
-- version update 0.5.1
-- version update 0.5.1
-
-* Mon Apr 02 2012 Matthew Dawkins <mattydaw@mandriva.org> 0.2.1-1
-+ Revision: 788859
-- imported package gnome-documents
+%{_datadir}/%{name}
+%{_iconsdir}/hicolor/*/apps/%{name}.png
 
