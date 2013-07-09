@@ -70,7 +70,6 @@ Documents is a document manager application for GNOME.
 %{_datadir}/dbus-1/services/org.gnome.Documents.ZpjMiner.service
 %{_datadir}/dbus-1/services/org.gnome.Documents.GDataMiner.service
 %{_datadir}/dbus-1/services/org.gnome.Documents.SearchProvider.service
-%{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 %{_datadir}/%{name}
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %_mandir/man1/*
