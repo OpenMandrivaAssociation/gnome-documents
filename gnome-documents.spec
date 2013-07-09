@@ -29,6 +29,7 @@ BuildRequires:	pkgconfig(webkitgtk-3.0)
 BuildRequires:	pkgconfig(gjs-1.0)
 BuildRequires:  pkgconfig(zapojit-0.0)
 BuildRequires:	xsltproc
+BuildRequires:	docbook-style-xsl
 Requires:	gjs
 Requires:	tracker
 
