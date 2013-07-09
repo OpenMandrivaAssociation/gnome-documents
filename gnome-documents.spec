@@ -28,6 +28,7 @@ BuildRequires:	pkgconfig(webkitgtk-3.0)
 # gjs-1.0 is needed to get the path to gjs-console
 BuildRequires:	pkgconfig(gjs-1.0)
 BuildRequires:  pkgconfig(zapojit-0.0)
+BuildRequires:	xsltproc
 Requires:	gjs
 Requires:	tracker
 
