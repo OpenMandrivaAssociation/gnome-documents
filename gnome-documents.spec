@@ -12,6 +12,8 @@ Group:		Graphical desktop/GNOME
 Source0:	ftp://ftp.gnome.org/pub/gnome/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	intltool
+BuildRequires:	itstool
+BuildRequires:	libxml2-utils
 BuildRequires:	pkgconfig(evince-document-3.0) >= 3.3.0
 BuildRequires:	pkgconfig(evince-view-3.0) >= 3.3.0
 BuildRequires:	pkgconfig(gobject-introspection-1.0) >= 0.9.6
