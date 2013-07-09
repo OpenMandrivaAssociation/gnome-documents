@@ -56,7 +56,6 @@ Documents is a document manager application for GNOME.
 %doc AUTHORS NEWS README
 %{_bindir}/%{name}
 %{_libexecdir}/gd-tracker-gdata-miner
-%{_libexecdir}/gnome-documents-search-provider
 %{_libexecdir}/gd-tracker-zpj-miner
 %{_libdir}/%{name}/girepository-1.0/Gd-%{api}.typelib
 %{_libdir}/%{name}/girepository-1.0/GdPrivate-%{api}.typelib
@@ -70,6 +69,7 @@ Documents is a document manager application for GNOME.
 %{_datadir}/dbus-1/services/org.gnome.Documents.ZpjMiner.service
 %{_datadir}/dbus-1/services/org.gnome.Documents.GDataMiner.service
 %{_datadir}/dbus-1/services/org.gnome.Documents.SearchProvider.service
+%{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 %{_datadir}/%{name}
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %_mandir/man1/*
