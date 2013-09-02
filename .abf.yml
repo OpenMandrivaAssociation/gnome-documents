@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   gnome-documents-3.8.3.tar.xz: efe34264400e1175c3d44aad0e8201379d1e2890
+sources:
+  gnome-documents-3.8.4.tar.xz: 96aab3b1e90c7f2201584fea73118a2d77a446bc
