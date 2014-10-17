@@ -30,6 +30,7 @@ BuildRequires:	pkgconfig(gjs-1.0)
 BuildRequires:  pkgconfig(zapojit-0.0)
 BuildRequires:	xsltproc
 BuildRequires:	docbook-style-xsl
+BuildRequires:	librsvg2
 Requires:	gjs
 Requires:	tracker
 
