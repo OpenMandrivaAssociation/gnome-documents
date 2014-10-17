@@ -3,8 +3,8 @@
 %define	api	1.0
 
 Name:		gnome-documents
-Version:	3.8.4
-Release:	7
+Version:	3.14.0
+Release:	1
 License:	GPLv2+
 Summary:	Document manager application for GNOME
 Url:		http://www.gnome.org/
@@ -20,7 +20,7 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0) >= 0.9.6
 BuildRequires:	pkgconfig(glib-2.0) >= 2.29.90
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.1.13
 BuildRequires:	pkgconfig(gnome-desktop-3.0)
-BuildRequires:	pkgconfig(tracker-sparql-0.16) >= 0.13.1
+BuildRequires:	pkgconfig(tracker-sparql-1.0) >= 0.13.1
 BuildRequires:	pkgconfig(goa-1.0) >= 3.1.90
 BuildRequires:	pkgconfig(libgdata) >= 0.9.1
 BuildRequires:	pkgconfig(clutter-gtk-1.0) >= 1.0.1
@@ -50,26 +50,21 @@ Documents is a document manager application for GNOME.
 
 %install
 %makeinstall_std
-%find_lang %{name}
+%find_lang %{name} --with-gnome
 
-%files -f %{name}.lang
+%files -f %{name}.lang 
 %doc AUTHORS NEWS README
 %{_bindir}/%{name}
-%{_libexecdir}/gd-tracker-gdata-miner
-%{_libexecdir}/gd-tracker-zpj-miner
 %{_libdir}/%{name}/girepository-1.0/Gd-%{api}.typelib
 %{_libdir}/%{name}/girepository-1.0/GdPrivate-%{api}.typelib
-%{_libdir}/%{name}/girepository-1.0/Egg-%{api}.typelib
 %{_libdir}/%{name}/libgd.so
 %{_libdir}/%{name}/libgdprivate-%{api}.so
-%{_libdir}/%{name}/libgdminer-%{api}.so
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/appdata/org.gnome.Documents.appdata.xml
+%{_datadir}/applications/org.gnome.Documents.desktop
+%{_datadir}/dbus-1/services/org.gnome.Documents.service
+%{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 %{_datadir}/glib-2.0/schemas/org.gnome.documents.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.Documents.enums.xml
-%{_datadir}/dbus-1/services/org.gnome.Documents.ZpjMiner.service
-%{_datadir}/dbus-1/services/org.gnome.Documents.GDataMiner.service
-%{_datadir}/dbus-1/services/org.gnome.Documents.SearchProvider.service
-%{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 %{_datadir}/%{name}
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %_mandir/man1/*
