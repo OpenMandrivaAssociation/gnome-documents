@@ -3,7 +3,7 @@
 %define	api	1.0
 
 Name:		gnome-documents
-Version:	3.14.0
+Version:	 3.16.0
 Release:	2
 License:	GPLv2+
 Summary:	Document manager application for GNOME
@@ -53,7 +53,7 @@ Documents is a document manager application for GNOME.
 %makeinstall_std
 %find_lang %{name} --with-gnome
 
-%files -f %{name}.lang 
+%files -f %{name}.lang
 %doc AUTHORS NEWS README
 %{_bindir}/%{name}
 %{_libdir}/%{name}/girepository-1.0/Gd-%{api}.typelib
