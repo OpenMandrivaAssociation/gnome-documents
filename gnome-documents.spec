@@ -79,7 +79,7 @@ the Documents directory.
 %{_iconsdir}/hicolor/*/apps/%{name}-symbolic.svg
 %_mandir/man1/*
 
-%files -f gnome-books
+%files -n gnome-books
 %{_bindir}/gnome-books
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 %{_datadir}/applications/org.gnome.Books.desktop
