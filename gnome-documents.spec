@@ -3,7 +3,7 @@
 %define	api	1.0
 
 Name:		gnome-documents
-Version:	 3.16.0
+Version:	3.16.0
 Release:	2
 License:	GPLv2+
 Summary:	Document manager application for GNOME
@@ -41,12 +41,20 @@ Obsoletes:	%{_lib}gdprivate-gir1.0 < 3.6.0-2
 %description
 Documents is a document manager application for GNOME.
 
+%package -n gnome-books
+Summary:        A e-books manager application for GNOME
+
+%description -n gnome-books
+gnome-books is an e-books manager application for GNOME,
+aiming to be a simple and elegant replacement for using Files to show
+the Documents directory.
+
 %prep
 %setup -q
 %apply_patches
 
 %build
-%configure2_5x
+%configure
 %make
 
 %install
@@ -68,5 +76,15 @@ Documents is a document manager application for GNOME.
 %{_datadir}/glib-2.0/schemas/org.gnome.Documents.enums.xml
 %{_datadir}/%{name}
 %{_iconsdir}/hicolor/*/apps/%{name}.png
+%{_iconsdir}/hicolor/*/apps/%{name}-symbolic.svg
 %_mandir/man1/*
+
+%files -f gnome-books
+%{_bindir}/gnome-books
+%{_datadir}/appdata/org.gnome.Books.appdata.xml
+%{_datadir}/applications/org.gnome.Books.desktop
+%{_datadir}/glib-2.0/schemas/org.gnome.books.gschema.xml
+%{_datadir}/dbus-1/services/org.gnome.Books.service
+%{_iconsdir}/hicolor/*/apps/gnome-books.png
+%{_iconsdir}/hicolor/*/apps/gnome-books-symbolic.svg
 
