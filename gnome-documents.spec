@@ -1,10 +1,10 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
-
+%define _disable_rebuild_configure 1
 %define	api	1.0
 
 Name:		gnome-documents
-Version:	3.16.0
-Release:	4
+Version:	3.18.1
+Release:	1
 License:	GPLv2+
 Summary:	Document manager application for GNOME
 Url:		http://www.gnome.org/
