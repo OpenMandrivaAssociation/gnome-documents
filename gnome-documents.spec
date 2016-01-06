@@ -3,7 +3,7 @@
 %define	api	1.0
 
 Name:		gnome-documents
-Version:	3.18.1
+Version:	3.18.2
 Release:	1
 License:	GPLv2+
 Summary:	Document manager application for GNOME
