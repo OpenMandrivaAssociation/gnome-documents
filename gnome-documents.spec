@@ -3,8 +3,8 @@
 %define	api	1.0
 
 Name:		gnome-documents
-Version:	3.18.2
-Release:	3
+Version:	3.30.0
+Release:	1
 License:	GPLv2+
 Summary:	Document manager application for GNOME
 Url:		http://www.gnome.org/
@@ -31,8 +31,15 @@ BuildRequires:  pkgconfig(zapojit-0.0)
 BuildRequires:	xsltproc
 BuildRequires:	docbook-style-xsl
 BuildRequires:	librsvg2
+BuildRequires:	meson
+BuildRequires:	poppler
+BuildRequires:	vala-devel
+BuildRequires:	pkgconfig(libsoup-2.4)
+
+
 Requires:	gjs
 Requires:	tracker
+Requires:	unoconv
 
 Obsoletes:	%{_lib}gdprivate1.0_0 < 0.3.3
 Obsoletes:	%{_lib}gdprivate1.0-devel < 0.3.3
@@ -54,11 +61,12 @@ the Documents directory.
 %apply_patches
 
 %build
-%configure
-%make
+%meson -Dgetting_started=true
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
+
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
