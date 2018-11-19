@@ -24,7 +24,7 @@ BuildRequires:	pkgconfig(tracker-sparql-2.0)
 BuildRequires:	pkgconfig(goa-1.0) >= 3.1.90
 BuildRequires:	pkgconfig(libgdata) >= 0.9.1
 BuildRequires:	pkgconfig(clutter-gtk-1.0) >= 1.0.1
-BuildRequires:	pkgconfig(webkitgtk-3.0)
+BuildRequires:	pkgconfig(webkit2gtk-4.0)
 # gjs-1.0 is needed to get the path to gjs-console
 BuildRequires:	pkgconfig(gjs-1.0)
 BuildRequires:  pkgconfig(zapojit-0.0)
