@@ -77,15 +77,15 @@ the Documents directory.
 %{_libdir}/%{name}/girepository-1.0/GdPrivate-%{api}.typelib
 %{_libdir}/%{name}/libgd.so
 %{_libdir}/%{name}/libgdprivate-%{api}.so
-%{_datadir}/appdata/org.gnome.Documents.appdata.xml
+#{_datadir}/appdata/org.gnome.Documents.appdata.xml
 %{_datadir}/applications/org.gnome.Documents.desktop
 %{_datadir}/dbus-1/services/org.gnome.Documents.service
 %{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 %{_datadir}/glib-2.0/schemas/org.gnome.documents.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.Documents.enums.xml
 %{_datadir}/%{name}
-%{_iconsdir}/hicolor/*/apps/%{name}.png
-%{_iconsdir}/hicolor/*/apps/%{name}-symbolic.svg
+#{_iconsdir}/hicolor/*/apps/%{name}.png
+#{_iconsdir}/hicolor/*/apps/%{name}-symbolic.svg
 %_mandir/man1/*
 
 %files -n gnome-books
