@@ -41,6 +41,8 @@ BuildRequires:  inkscape
 
 Requires:	gjs
 Requires:	tracker
+Requires: typelib(EvinceDocument)
+Requires: typelib(GdPrivate)
 Recommends:	unoconv
 
 Obsoletes:	%{_lib}gdprivate1.0_0 < 0.3.3
