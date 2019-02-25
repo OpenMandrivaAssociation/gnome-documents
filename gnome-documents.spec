@@ -36,6 +36,7 @@ BuildRequires:	poppler
 BuildRequires:	vala-devel
 BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:  pkgconfig(libgepub-0.6)
+BuildRequires:  inkscape
 
 
 Requires:	gjs
