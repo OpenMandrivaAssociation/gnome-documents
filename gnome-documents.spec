@@ -41,7 +41,7 @@ BuildRequires:  inkscape
 
 Requires:	gjs
 Requires:	tracker
-Requires:	unoconv
+Recommends:	unoconv
 
 Obsoletes:	%{_lib}gdprivate1.0_0 < 0.3.3
 Obsoletes:	%{_lib}gdprivate1.0-devel < 0.3.3
