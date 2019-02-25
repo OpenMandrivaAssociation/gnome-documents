@@ -90,10 +90,10 @@ the Documents directory.
 
 %files -n gnome-books
 %{_bindir}/gnome-books
-%{_datadir}/appdata/org.gnome.Books.appdata.xml
+#{_datadir}/appdata/org.gnome.Books.appdata.xml
 %{_datadir}/applications/org.gnome.Books.desktop
 %{_datadir}/glib-2.0/schemas/org.gnome.books.gschema.xml
 %{_datadir}/dbus-1/services/org.gnome.Books.service
-%{_iconsdir}/hicolor/*/apps/gnome-books.png
-%{_iconsdir}/hicolor/*/apps/gnome-books-symbolic.svg
+#{_iconsdir}/hicolor/*/apps/gnome-books.png
+#{_iconsdir}/hicolor/*/apps/gnome-books-symbolic.svg
 
