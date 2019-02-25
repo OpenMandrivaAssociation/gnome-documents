@@ -1,5 +1,6 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 %define _disable_rebuild_configure 1
+%define		gi_libname	%mklibname gdprivate-gir %{api}
 %define	api	1.0
 
 Name:		gnome-documents
@@ -60,6 +61,13 @@ gnome-books is an e-books manager application for GNOME,
 aiming to be a simple and elegant replacement for using Files to show
 the Documents directory.
 
+%package -n %{gi_libname}
+Summary:	GObject introspection interface for %{name}
+Group:		System/Libraries
+
+%description -n %{gi_libname}
+GObject introspection interface for %{name}.
+
 %prep
 %setup -q
 
@@ -75,8 +83,6 @@ the Documents directory.
 %files -f %{name}.lang
 %doc AUTHORS NEWS README
 %{_bindir}/%{name}
-%{_libdir}/%{name}/girepository-1.0/Gd-%{api}.typelib
-%{_libdir}/%{name}/girepository-1.0/GdPrivate-%{api}.typelib
 %{_libdir}/%{name}/libgd.so
 %{_libdir}/%{name}/libgdprivate-%{api}.so
 %{_datadir}/metainfo/org.gnome.Documents.appdata.xml
@@ -99,3 +105,7 @@ the Documents directory.
 %{_iconsdir}/hicolor/*/apps/org.gnome.Books*
 #{_iconsdir}/hicolor/*/apps/gnome-books-symbolic.svg
 
+%files -n %{gi_libname}
+%dir %{_libdir}/%{name}/girepository-1.0
+%{_libdir}/%{name}/girepository-1.0/Gd-%{api}.typelib
+%{_libdir}/%{name}/girepository-1.0/GdPrivate-%{api}.typelib
