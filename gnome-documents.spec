@@ -3,8 +3,8 @@
 %define	api	1.0
 
 Name:		gnome-documents
-Version:	3.18.2
-Release:	3
+Version:	3.30.1
+Release:	1
 License:	GPLv2+
 Summary:	Document manager application for GNOME
 Url:		http://www.gnome.org/
@@ -20,19 +20,28 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0) >= 0.9.6
 BuildRequires:	pkgconfig(glib-2.0) >= 2.29.90
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.1.13
 BuildRequires:	pkgconfig(gnome-desktop-3.0)
-BuildRequires:	pkgconfig(tracker-sparql-1.0) >= 0.13.1
+BuildRequires:	pkgconfig(tracker-sparql-2.0)
 BuildRequires:	pkgconfig(goa-1.0) >= 3.1.90
 BuildRequires:	pkgconfig(libgdata) >= 0.9.1
 BuildRequires:	pkgconfig(clutter-gtk-1.0) >= 1.0.1
-BuildRequires:	pkgconfig(webkitgtk-3.0)
+BuildRequires:	pkgconfig(webkit2gtk-4.0)
 # gjs-1.0 is needed to get the path to gjs-console
 BuildRequires:	pkgconfig(gjs-1.0)
 BuildRequires:  pkgconfig(zapojit-0.0)
 BuildRequires:	xsltproc
 BuildRequires:	docbook-style-xsl
 BuildRequires:	librsvg2
+BuildRequires:	meson
+BuildRequires:	poppler
+BuildRequires:	vala-devel
+BuildRequires:	pkgconfig(libsoup-2.4)
+BuildRequires:  pkgconfig(libgepub-0.6)
+BuildRequires:  inkscape
+
+
 Requires:	gjs
 Requires:	tracker
+Requires:	unoconv
 
 Obsoletes:	%{_lib}gdprivate1.0_0 < 0.3.3
 Obsoletes:	%{_lib}gdprivate1.0-devel < 0.3.3
@@ -51,14 +60,14 @@ the Documents directory.
 
 %prep
 %setup -q
-%apply_patches
 
 %build
-%configure
-%make
+%meson -Dgetting_started=true
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
+
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
@@ -68,23 +77,23 @@ the Documents directory.
 %{_libdir}/%{name}/girepository-1.0/GdPrivate-%{api}.typelib
 %{_libdir}/%{name}/libgd.so
 %{_libdir}/%{name}/libgdprivate-%{api}.so
-%{_datadir}/appdata/org.gnome.Documents.appdata.xml
+%{_datadir}/metainfo/org.gnome.Documents.appdata.xml
 %{_datadir}/applications/org.gnome.Documents.desktop
 %{_datadir}/dbus-1/services/org.gnome.Documents.service
 %{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 %{_datadir}/glib-2.0/schemas/org.gnome.documents.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.Documents.enums.xml
 %{_datadir}/%{name}
-%{_iconsdir}/hicolor/*/apps/%{name}.png
-%{_iconsdir}/hicolor/*/apps/%{name}-symbolic.svg
+%{_iconsdir}/hicolor/*/apps/org.gnome.Documents*
+#{_iconsdir}/hicolor/*/apps/%{name}-symbolic.svg
 %_mandir/man1/*
 
 %files -n gnome-books
 %{_bindir}/gnome-books
-%{_datadir}/appdata/org.gnome.Books.appdata.xml
+%{_datadir}/metainfo/org.gnome.Books.appdata.xml
 %{_datadir}/applications/org.gnome.Books.desktop
 %{_datadir}/glib-2.0/schemas/org.gnome.books.gschema.xml
 %{_datadir}/dbus-1/services/org.gnome.Books.service
-%{_iconsdir}/hicolor/*/apps/gnome-books.png
-%{_iconsdir}/hicolor/*/apps/gnome-books-symbolic.svg
+%{_iconsdir}/hicolor/*/apps/org.gnome.Books*
+#{_iconsdir}/hicolor/*/apps/gnome-books-symbolic.svg
 
