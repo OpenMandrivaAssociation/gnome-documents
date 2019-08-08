@@ -4,7 +4,7 @@
 %define	api	1.0
 
 Name:		gnome-documents
-Version:	3.30.1
+Version:	3.32.0
 Release:	1
 License:	GPLv2+
 Summary:	Document manager application for GNOME
@@ -39,7 +39,6 @@ BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:  pkgconfig(libgepub-0.6)
 BuildRequires:  inkscape
 
-
 Requires:	gjs
 Requires:	tracker
 Requires: typelib(EvinceDocument)
@@ -52,14 +51,6 @@ Obsoletes:	%{_lib}gdprivate-gir1.0 < 3.6.0-2
 
 %description
 Documents is a document manager application for GNOME.
-
-%package -n gnome-books
-Summary:        A e-books manager application for GNOME
-
-%description -n gnome-books
-gnome-books is an e-books manager application for GNOME,
-aiming to be a simple and elegant replacement for using Files to show
-the Documents directory.
 
 %package -n %{gi_libname}
 Summary:	GObject introspection interface for %{name}
@@ -81,7 +72,7 @@ GObject introspection interface for %{name}.
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc AUTHORS NEWS README
+%doc AUTHORS NEWS
 %{_bindir}/%{name}
 %{_libdir}/%{name}/libgd.so
 %{_libdir}/%{name}/libgdprivate-%{api}.so
@@ -95,15 +86,6 @@ GObject introspection interface for %{name}.
 %{_iconsdir}/hicolor/*/apps/org.gnome.Documents*
 #{_iconsdir}/hicolor/*/apps/%{name}-symbolic.svg
 %_mandir/man1/*
-
-%files -n gnome-books
-%{_bindir}/gnome-books
-%{_datadir}/metainfo/org.gnome.Books.appdata.xml
-%{_datadir}/applications/org.gnome.Books.desktop
-%{_datadir}/glib-2.0/schemas/org.gnome.books.gschema.xml
-%{_datadir}/dbus-1/services/org.gnome.Books.service
-%{_iconsdir}/hicolor/*/apps/org.gnome.Books*
-#{_iconsdir}/hicolor/*/apps/gnome-books-symbolic.svg
 
 %files -n %{gi_libname}
 %dir %{_libdir}/%{name}/girepository-1.0
