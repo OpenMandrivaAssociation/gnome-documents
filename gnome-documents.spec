@@ -67,7 +67,7 @@ GObject introspection interface for %{name}.
 %setup -q
 
 %build
-%meson -Dgetting_started=true
+%meson -Dgetting_started=false
 %meson_build
 
 %install
