@@ -31,6 +31,10 @@ BuildRequires:	pkgconfig(gjs-1.0)
 BuildRequires:  pkgconfig(zapojit-0.0)
 BuildRequires:	xsltproc
 BuildRequires:	docbook-style-xsl
+BuildRequires:	docbook-dtds
+BuildRequires:	docbook-utils
+BuildRequires:	docbook-utils-pdf
+BuildRequires:	docbook2x
 BuildRequires:	librsvg2
 BuildRequires:	meson
 BuildRequires:	poppler
