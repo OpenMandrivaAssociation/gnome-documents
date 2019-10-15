@@ -4,7 +4,7 @@
 %define	api	1.0
 
 Name:		gnome-documents
-Version:	3.32.0
+Version:	3.33.90
 Release:	1
 License:	GPLv2+
 Summary:	Document manager application for GNOME
@@ -31,6 +31,10 @@ BuildRequires:	pkgconfig(gjs-1.0)
 BuildRequires:  pkgconfig(zapojit-0.0)
 BuildRequires:	xsltproc
 BuildRequires:	docbook-style-xsl
+BuildRequires:	docbook-dtds
+BuildRequires:	docbook-utils
+BuildRequires:	docbook-utils-pdf
+BuildRequires:	docbook2x
 BuildRequires:	librsvg2
 BuildRequires:	meson
 BuildRequires:	poppler
@@ -63,7 +67,7 @@ GObject introspection interface for %{name}.
 %setup -q
 
 %build
-%meson -Dgetting_started=true
+%meson -Dgetting_started=false
 %meson_build
 
 %install
