@@ -1,3 +1,5 @@
+%global __requires_exclude %{?__requires_exclude:%__requires_exclude|}typelib\\((Gd|GdPrivate)\\)
+
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 %define _disable_rebuild_configure 1
 %define		gi_libname	%mklibname gdprivate-gir %{api}
@@ -5,7 +7,7 @@
 
 Name:		gnome-documents
 Version:	3.33.90
-Release:	1
+Release:	2
 License:	GPLv2+
 Summary:	Document manager application for GNOME
 Url:		http://www.gnome.org/
@@ -46,7 +48,7 @@ BuildRequires:  inkscape
 Requires:	gjs
 Requires:	tracker
 Requires: typelib(EvinceDocument)
-Requires: typelib(GdPrivate)
+#Requires: typelib(GdPrivate)
 Recommends:	unoconv
 
 Obsoletes:	%{_lib}gdprivate1.0_0 < 0.3.3
