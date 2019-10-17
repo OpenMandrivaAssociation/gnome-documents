@@ -1,13 +1,13 @@
+%global __provides_exclude %{?__provides_exclude:%__provides_exclude|}typelib\\((Gd|GdPrivate)\\)
 %global __requires_exclude %{?__requires_exclude:%__requires_exclude|}typelib\\((Gd|GdPrivate)\\)
 
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 %define _disable_rebuild_configure 1
-%define		gi_libname	%mklibname gdprivate-gir %{api}
 %define	api	1.0
 
 Name:		gnome-documents
 Version:	3.33.90
-Release:	2
+Release:	3
 License:	GPLv2+
 Summary:	Document manager application for GNOME
 Url:		http://www.gnome.org/
@@ -57,13 +57,6 @@ Obsoletes:	%{_lib}gdprivate-gir1.0 < 3.6.0-2
 
 %description
 Documents is a document manager application for GNOME.
-
-%package -n %{gi_libname}
-Summary:	GObject introspection interface for %{name}
-Group:		System/Libraries
-
-%description -n %{gi_libname}
-GObject introspection interface for %{name}.
 
 %prep
 %setup -q
