@@ -85,3 +85,5 @@ Documents is a document manager application for GNOME.
 %{_iconsdir}/hicolor/*/apps/org.gnome.Documents*
 #{_iconsdir}/hicolor/*/apps/%{name}-symbolic.svg
 %_mandir/man1/*
+%{_libdir}/%{name}/girepository-1.0/Gd-1.0.typelib
+%{_libdir}/%{name}/girepository-1.0/GdPrivate-1.0.typelib
