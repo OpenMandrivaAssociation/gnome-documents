@@ -6,8 +6,8 @@
 %define	api	1.0
 
 Name:		gnome-documents
-Version:	3.33.90
-Release:	3
+Version:	3.34.0
+Release:	1
 License:	GPLv2+
 Summary:	Document manager application for GNOME
 Url:		http://www.gnome.org/
@@ -47,9 +47,34 @@ BuildRequires:  inkscape
 
 Requires:	gjs
 Requires:	tracker
-Requires: typelib(EvinceDocument)
-#Requires: typelib(GdPrivate)
 Recommends:	unoconv
+
+Requires: typelib(Atk)
+Requires: typelib(EvinceDocument)
+Requires: typelib(EvinceView)
+Requires: typelib(GData)
+Requires: typelib(GDesktopEnums)
+Requires: typelib(GLib)
+Requires: typelib(GModule)
+Requires: typelib(GObject)
+Requires: typelib(Gdk)
+Requires: typelib(GdkPixbuf)
+Requires: typelib(Gio)
+Requires: typelib(GnomeDesktop)
+Requires: typelib(Goa)
+Requires: typelib(Gtk)
+Requires: typelib(Json)
+Requires: typelib(LOKDocView)
+Requires: typelib(Pango)
+Requires: typelib(Rest)
+Requires: typelib(Soup)
+Requires: typelib(Tracker)
+Requires: typelib(TrackerControl)
+Requires: typelib(WebKit2)
+Requires: typelib(Zpj)
+Requires: typelib(cairo)
+Requires: typelib(libxml2)
+Requires: typelib(xlib)
 
 Obsoletes:	%{_lib}gdprivate1.0_0 < 0.3.3
 Obsoletes:	%{_lib}gdprivate1.0-devel < 0.3.3
