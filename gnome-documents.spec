@@ -7,7 +7,7 @@
 
 Name:		gnome-documents
 Version:	3.34.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Summary:	Document manager application for GNOME
 Url:		http://www.gnome.org/
@@ -23,7 +23,7 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0) >= 0.9.6
 BuildRequires:	pkgconfig(glib-2.0) >= 2.29.90
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.1.13
 BuildRequires:	pkgconfig(gnome-desktop-3.0)
-BuildRequires:	pkgconfig(tracker-sparql-2.0)
+BuildRequires:	pkgconfig(tracker-sparql-3.0)
 BuildRequires:	pkgconfig(goa-1.0) >= 3.1.90
 BuildRequires:	pkgconfig(libgdata) >= 0.9.1
 BuildRequires:	pkgconfig(clutter-gtk-1.0) >= 1.0.1
