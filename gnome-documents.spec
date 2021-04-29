@@ -1,5 +1,5 @@
-%global __provides_exclude %{?__provides_exclude:%__provides_exclude|}typelib\\((Gd|GdPrivate)\\)
-%global __requires_exclude %{?__requires_exclude:%__requires_exclude|}typelib\\((Gd|GdPrivate)\\)
+%global __provides_exclude %{?__provides_exclude:%__provides_exclude|}typelib\\((Gd|GdPrivate)\\)|typelib\\(LOKDocView\\)
+%global __requires_exclude %{?__requires_exclude:%__requires_exclude|}typelib\\((Gd|GdPrivate)\\)|typelib\\(LOKDocView\\)
 
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 %define _disable_rebuild_configure 1
@@ -7,7 +7,7 @@
 
 Name:		gnome-documents
 Version:	3.34.0
-Release:	4
+Release:	5
 License:	GPLv2+
 Summary:	Document manager application for GNOME
 Url:		http://www.gnome.org/
