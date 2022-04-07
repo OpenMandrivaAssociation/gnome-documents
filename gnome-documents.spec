@@ -7,7 +7,7 @@
 
 Name:		gnome-documents
 Version:	3.34.0
-Release:	6
+Release:	7
 License:	GPLv2+
 Summary:	Document manager application for GNOME
 Url:		http://www.gnome.org/
