@@ -10,7 +10,7 @@ Version:	3.34.0
 Release:	11
 License:	GPLv2+
 Summary:	Document manager application for GNOME
-Url:		http://www.gnome.org/
+Url:		https://www.gnome.org/
 Group:		Graphical desktop/GNOME
 Source0:	ftp://ftp.gnome.org/pub/gnome/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	gobject-introspection-devel
